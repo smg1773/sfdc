@@ -1,0 +1,32 @@
+<h1>Salesforce.com API Integration</h1>
+
+<span class="lead" style="padding-bottom:10px"> </span>
+
+<div ng-controller="AccountListCtrl">
+
+  <h2>Create a New Account</h2>
+  <form name="frm" ng-submit="add()">
+    <input type="text" class="input-xlarge" ng-model="newAccount.name" required><br/>
+    <button type="Submit" class="btn btn-primary">Add Account</button>
+  </form><br/>
+
+  <h2>Recently Added or Modified Accounts</h2>
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Account Name</th>
+      <th>Type</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="account in accounts">
+      <td><a href="#/accounts/{{account.Id}}">{{account.Name}}</a></td>
+      <td>{{account.Type}}</td>
+      <td>{{account.BillingState}}</td>
+    </tr>
+  </tbody>
+  </table>
+
+</div>
