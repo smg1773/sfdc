@@ -1,0 +1,21 @@
+#
+# the application name must be unique to your app engine account
+# change force-demo to your own app name
+#
+application: force-demo
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+  mime_type: text/html
+  
+- url: /css
+  static_dir: css
+  mime_type: text/css
+    
+- url: /.*
+  script: main.py
+  secure: always
